@@ -25,7 +25,7 @@ class MarketPlace extends StatelessWidget {
           ),
           border: Border.all(
             width: 1,
-            color: Color.fromARGB(255, 176, 142, 211),
+            color: const Color.fromARGB(255, 176, 142, 211),
           )),
       child: Center(
         child: Column(
@@ -54,53 +54,61 @@ class MarketPlace extends StatelessWidget {
       children: [
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                height: 300,
-                width: 300,
-                // decoration: BoxDecoration(
-                //   color: const Color.fromARGB(239, 188, 165, 214),
-                //    color: Color(0xFFE6CFFF),
-                //   border: Border.all(color: Colors.black12, width: 1),
-                //   borderRadius: BorderRadius.circular(20),
-                // ),
-                child: Wrap(
-                  // runSpacing: 1,
-                  // spacing: 1,
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              children: [
+                Container(
+                  height: 300,
+                  width: 300,
+                  child: Wrap(
+                    children: [
+                      gridPart(
+                          img: "assets/images/verify.png",
+                          text: "Verified Coaching",
+                          bottomLeft: 0,
+                          bottomRight: 0,
+                          topRight: 0,
+                          topLeft: 20),
+                      gridPart(
+                          img: "assets/images/save_money.png",
+                          text: "Lowest Prices",
+                          bottomLeft: 0,
+                          bottomRight: 0,
+                          topRight: 20,
+                          topLeft: 0),
+                      gridPart(
+                          img: "assets/images/indicator.png",
+                          text: "Free Career Check",
+                          bottomLeft: 20,
+                          bottomRight: 0,
+                          topRight: 0,
+                          topLeft: 0),
+                      gridPart(
+                          img: "assets/images/chart.png",
+                          text: "Progress Tracking",
+                          bottomLeft: 0,
+                          bottomRight: 20,
+                          topRight: 0,
+                          topLeft: 0),
+                    ],
+                  ),
+                ),
+                Stack(
                   children: [
-                    gridPart(
-                        img: "assets/images/verify.png",
-                        text: "Verified Coaching",
-                        bottomLeft: 0,
-                        bottomRight: 0,
-                        topRight: 0,
-                        topLeft: 20),
-                    gridPart(
-                        img: "assets/images/save_money.png",
-                        text: "Lowest Prices",
-                        bottomLeft: 0,
-                        bottomRight: 0,
-                        topRight: 20,
-                        topLeft: 0),
-                    gridPart(
-                        img: "assets/images/indicator.png",
-                        text: "Free Career Check",
-                        bottomLeft: 20,
-                        bottomRight: 0,
-                        topRight: 0,
-                        topLeft: 0),
-                    gridPart(
-                        img: "assets/images/chart.png",
-                        text: "Progress Tracking",
-                        bottomLeft: 0,
-                        bottomRight: 20,
-                        topRight: 0,
-                        topLeft: 0),
+                    Positioned(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          'assets/images/pay.png',
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 20),
@@ -167,7 +175,7 @@ class MarketPlace extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
