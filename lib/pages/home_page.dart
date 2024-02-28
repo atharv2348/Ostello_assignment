@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(color: Colors.black, fontSize: 22),
                 ),
               ),
+              SizedBox(height: 30),
               MarketPlace(),
               SizedBox(height: 30),
               Padding(
