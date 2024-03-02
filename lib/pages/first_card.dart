@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../utils/colors.dart';
 import '../utils/sizes.dart';
@@ -40,16 +41,19 @@ class FirstCard extends StatelessWidget {
                         Rect.fromLTRB(0, 0, rect.width, rect.height - 10));
                   },
                   blendMode: BlendMode.dstIn,
-                  child: Image.asset('assets/images/focus.png',
-                      fit: BoxFit.fitHeight),
+                  child: Image.asset(
+                    'assets/images/focus.png',
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
             ),
             Positioned(
-              bottom: 180,
+              top: -0.08 * screenHeight,
               child: Image.asset(
                 'assets/images/robot.png',
-                scale: 10,
+                fit: BoxFit.cover,
+                width: screenWidth * 1.0,
               ),
             ),
             Positioned(
@@ -107,11 +111,14 @@ class FirstCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      HapticFeedback.mediumImpact();
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       backgroundColor: Colors.white,
+                      foregroundColor: primaryColor,
                       side: const BorderSide(color: primaryColor),
                       // padding:
                     ),

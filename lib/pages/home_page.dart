@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ostello_assignment/pages/custom_bottom_navigation_bar.dart';
 import 'package:ostello_assignment/pages/first_card.dart';
 import 'package:ostello_assignment/pages/last_card.dart';
@@ -32,7 +33,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            HapticFeedback.mediumImpact();
+          },
           hoverElevation: 2,
           highlightElevation: 10,
           foregroundColor: Colors.transparent,
@@ -56,7 +59,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               UserInfo(),
-              Divider(),
+              SizedBox(height: 10),
               FirstCard(),
               SizedBox(height: 30),
               Padding(

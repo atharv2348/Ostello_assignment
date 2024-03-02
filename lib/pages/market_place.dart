@@ -16,7 +16,7 @@ class MarketPlace extends StatelessWidget {
       height: 145,
       width: 145,
       decoration: BoxDecoration(
-          color: const Color(0xFFE6CFFF),
+          color: const Color(0xFFF6EFFE),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(topLeft),
             topRight: Radius.circular(topRight),
@@ -25,15 +25,21 @@ class MarketPlace extends StatelessWidget {
           ),
           border: Border.all(
             width: 1,
-            color: const Color.fromARGB(255, 176, 142, 211),
+            color: const Color(0xFFE6CFFF),
           )),
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: 50, child: Image.asset(img)),
-            const SizedBox(height: 20),
+            SizedBox(
+                height: 50,
+                child: Image.asset(
+                  img,
+                  fit: BoxFit.cover,
+                )),
+            const SizedBox(height: 10),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 100),
               child: Text(
@@ -57,8 +63,9 @@ class MarketPlace extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   height: 300,
                   width: 300,
                   child: Wrap(
@@ -94,18 +101,12 @@ class MarketPlace extends StatelessWidget {
                     ],
                   ),
                 ),
-                Stack(
-                  children: [
-                    Positioned(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          'assets/images/pay.png',
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ),
-                    ),
-                  ],
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    'assets/images/pay.png',
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ],
             ),
@@ -119,7 +120,8 @@ class MarketPlace extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
@@ -133,7 +135,8 @@ class MarketPlace extends StatelessWidget {
                             top: 10,
                             left: 0,
                             child: Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 10.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -189,7 +192,8 @@ class MarketPlace extends StatelessWidget {
                           top: 10,
                           left: 0,
                           child: Padding(
-                            padding: EdgeInsets.all(20.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 10.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

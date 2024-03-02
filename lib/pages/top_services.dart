@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
 import '../utils/colors.dart';
@@ -138,8 +139,13 @@ Widget customCard2({required String img}) {
                 children: [
                   const Text(
                     "Your Career Roadmap",
-                    style: TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Avenir_roman',
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic),
                   ),
+                  SizedBox(height: 5),
                   const Text(
                     "Those who plan ahead hold the",
                     style: TextStyle(fontFamily: 'Avenir_light'),
@@ -150,10 +156,13 @@ Widget customCard2({required String img}) {
                   ),
                   const SizedBox(height: 10),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      HapticFeedback.mediumImpact();
+                    },
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
+                      side: BorderSide(color: primaryColor),
                     ),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,8 +171,10 @@ Widget customCard2({required String img}) {
                           "Create Now",
                           style: TextStyle(color: primaryColor),
                         ),
+                        SizedBox(width: 5),
                         Icon(
                           Icons.arrow_forward_ios_rounded,
+                          color: primaryColor,
                           size: 15,
                         )
                       ],
@@ -175,7 +186,7 @@ Widget customCard2({required String img}) {
           ),
           Positioned(
             bottom: -70,
-            right: -70,
+            right: -50,
             child: Container(
               height: 170,
               width: 170,
@@ -223,7 +234,7 @@ Widget customCard3({required String img}) {
               top: 10,
               left: 0,
               child: Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -251,7 +262,7 @@ Widget customCard3({required String img}) {
             Positioned(
               right: 30,
               child: Transform.rotate(
-                angle: 1.2 * math.pi,
+                angle: 1.1 * math.pi,
                 child: SizedBox(
                   height: 120,
                   child: Image.asset(img),

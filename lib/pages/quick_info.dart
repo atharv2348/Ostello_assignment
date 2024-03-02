@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../utils/sizes.dart';
 
@@ -16,11 +17,9 @@ class QuickInfo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: Container(
-                // height: 300,
                 width: (290 * screenWidth) / 360,
                 decoration: BoxDecoration(
                   color: const Color(0xFFF9F9F9),
-                  // color: Colors.grey,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -40,18 +39,21 @@ class QuickInfo extends StatelessWidget {
                         style:
                             TextStyle(fontFamily: 'Avenir_light', fontSize: 15),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: OutlinedButton(
                           style: OutlinedButton.styleFrom(
+                            backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
                             side: const BorderSide(
                                 color: Color(0xFF7D23E0), width: 1.0),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            HapticFeedback.mediumImpact();
+                          },
                           child: const Center(
                             child: Text("Explore Now",
                                 style: TextStyle(color: Color(0xFF7D23E0))),
@@ -66,7 +68,6 @@ class QuickInfo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: Container(
-                // height: 300,
                 width: (290 * screenWidth) / 360,
                 decoration: BoxDecoration(
                   color: const Color(0xFFF9F9F9),
@@ -91,18 +92,21 @@ class QuickInfo extends StatelessWidget {
                         style:
                             TextStyle(fontFamily: 'Avenir_light', fontSize: 15),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: OutlinedButton(
                           style: OutlinedButton.styleFrom(
+                            backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
                             side: const BorderSide(
                                 color: Color(0xFF7D23E0), width: 1.0),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            HapticFeedback.mediumImpact();
+                          },
                           child: const Center(
                             child: Text("Explore Now",
                                 style: TextStyle(color: Color(0xFF7D23E0))),
